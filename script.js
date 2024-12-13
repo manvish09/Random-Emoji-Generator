@@ -12,12 +12,20 @@ const btn = document.querySelector("#emoji");
 const name = document.querySelector("#emoji-name");
 const group = document.querySelector("#emoji-group");
 const subgroup = document.querySelector("#emoji-sg");
+var index = Math.floor(Math.random()*1859);
 btn.addEventListener("mouseover", ()=> {
-    const index = Math.floor(Math.random()*1859);
+    index = Math.floor(Math.random()*1859);
     emoji.innerHTML = data[index].character;
     name.innerHTML = "Name: "+ data[index].unicodeName.slice(5, data[index].unicodeName.length);;;
     group.innerHTML = "Group: "+ data[index].group;
     subgroup.innerHTML = "Sub-Group: " + data[index].subGroup;
 })
-    
+  
+btn.addEventListener("click", ()=> {
+    index = Math.floor(Math.random()*1859);
+    emoji.innerHTML = data[index].character;
+    name.innerHTML = "Name: "+ data[index].unicodeName.slice(5, data[index].unicodeName.length);;;
+    group.innerHTML = "Group: "+ data[index].group;
+    subgroup.innerHTML = "Sub-Group: " + data[index].subGroup;
+})
 }
